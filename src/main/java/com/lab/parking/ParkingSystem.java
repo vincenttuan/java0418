@@ -3,6 +3,8 @@ package com.lab.parking;
 import java.util.Scanner;
 
 public class ParkingSystem {
+    static int parking = 0b100000; // 車位
+    
     public static void main(String[] args) {
         menu();
     }
@@ -18,6 +20,8 @@ public class ParkingSystem {
         int x = sc.nextInt();
         switch (x) {
             case 1:
+                System.out.print("目前車位: ");
+                System.out.println(Integer.toBinaryString(parking));
                 break;
             case 2:
                 break;
