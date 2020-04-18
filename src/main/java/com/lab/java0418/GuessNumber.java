@@ -14,6 +14,10 @@ public class GuessNumber {
             if(guess == ans) {
                 System.out.println("恭喜答對了");
                 break;
+            } else if(guess < ans) {
+                min = guess;
+            } else {
+                max = guess;
             }
         } while (true);
     }
