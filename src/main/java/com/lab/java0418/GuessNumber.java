@@ -1,10 +1,11 @@
 package com.lab.java0418;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
     public static void main(String[] args) {
-        int ans = 38;
+        int ans = new Random().nextInt(99) + 1;
         int min = 0;
         int max = 100;
         do {            
