@@ -1,5 +1,7 @@
 package com.lab.parking;
 
+import java.util.Scanner;
+
 public class ParkingSystem {
     public static void main(String[] args) {
         menu();
@@ -10,6 +12,22 @@ public class ParkingSystem {
         System.out.println("2. 我要停車");
         System.out.println("3. 我要取車");
         System.out.println("4. 離開系統");
+        System.out.println("-------------");
+        System.out.println("請選擇 ==> ");
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        switch (x) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                break;
+        }
     }
     
 }
