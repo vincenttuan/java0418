@@ -36,7 +36,15 @@ public class ParkingSystem {
                 }
                 break;
             case 3: // 我要取車
-                // 請自行撰寫
+                System.out.println("請選則車位(0~5): ");
+                n = sc.nextInt();
+                car = (int)Math.pow(2, n);
+                if((parking & car) > 0) {
+                    System.out.printf("取車成功 ! %d 號車位可取車\n", n);
+                    parking -= car;
+                } else {
+                    System.out.printf("取車失敗 ! %d 號車位無車可取\n", n);
+                }
                 break;
             case 4: // 離開系統
                 return; 
