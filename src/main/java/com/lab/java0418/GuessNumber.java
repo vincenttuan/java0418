@@ -5,13 +5,15 @@ import java.util.Scanner;
 
 public class GuessNumber {
     public static void main(String[] args) {
+        int count = 7;
         int ans = new Random().nextInt(99) + 1;
         int min = 0;
         int max = 100;
-        do {            
+        do {
             Scanner sc = new Scanner(System.in);
-            System.out.printf("請在 %d ~ %d 猜一數字:\n", min, max);
+            System.out.printf("第 %d 次 : 請在 %d ~ %d 猜一數字:\n", count, min, max);
             int guess = sc.nextInt();
+            count--;
             // 1.檢查輸入的數值是否超過 min 與 max 的範圍?
             if(guess >= max || guess <= min) {
                 System.out.println("範圍錯誤, 請重新輸入~");
@@ -27,6 +29,6 @@ public class GuessNumber {
             } else {
                 max = guess;
             }
-        } while (true);
+        } while (count > 0);
     }
 }
