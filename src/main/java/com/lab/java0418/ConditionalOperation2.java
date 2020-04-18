@@ -7,5 +7,6 @@ public class ConditionalOperation2 {
         int y = 0;
         String s = (++x > 10 | y++ > 0) ? "成功" : "失敗";
         System.out.printf("x= %d, y= %d, s= %s\n", x, y, s);
+
     }
 }
