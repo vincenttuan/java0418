@@ -13,7 +13,5 @@ public class BinaryOperatorParking {
         } else {
             System.out.println(no + "號車位不可停");
         }
-        
-        
     }
 }
