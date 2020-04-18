@@ -36,6 +36,7 @@ public class ParkingSystem {
                 }
                 break;
             case 3: // 我要取車
+                // 請自行撰寫
                 break;
             case 4: // 離開系統
                 return; 
