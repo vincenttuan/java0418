@@ -28,10 +28,15 @@ public class ParkingSystem {
             case 3:
                 break;
             case 4:
+                System.exit(1); // 離開系統
                 break;
             default:
                 break;
         }
+        System.out.println("按任意鍵繼續 ...");
+        sc = new Scanner(System.in);
+        sc.nextLine();
+        menu();
     }
     
 }
