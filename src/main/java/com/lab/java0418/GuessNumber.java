@@ -12,8 +12,11 @@ public class GuessNumber {
             Scanner sc = new Scanner(System.in);
             System.out.printf("請在 %d ~ %d 猜一數字:\n", min, max);
             int guess = sc.nextInt();
-            // 1.檢查數值範圍是否合法 ?
-            
+            // 1.檢查輸入的數值是否超過 min 與 max 的範圍?
+            if(guess >= max || guess <= min) {
+                System.out.println("範圍錯誤, 請重新輸入~");
+                continue;
+            }
             
             // 2.進行遊戲比對
             if(guess == ans) {
