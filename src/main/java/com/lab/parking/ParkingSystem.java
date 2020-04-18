@@ -28,8 +28,7 @@ public class ParkingSystem {
             case 3:
                 break;
             case 4:
-                System.exit(1); // 離開系統
-                break;
+                return; // 離開系統
             default:
                 break;
         }
