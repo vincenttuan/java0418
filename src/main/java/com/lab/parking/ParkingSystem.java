@@ -18,6 +18,7 @@ public class ParkingSystem {
         System.out.println("請選擇 ==> ");
         Scanner sc = new Scanner(System.in);
         int x = sc.nextInt();
+        int n, car; // 使用者輸入車位號, 實際車位數值
         switch (x) {
             case 1: // 查詢車位
                 System.out.print("目前車位: ");
@@ -25,15 +26,14 @@ public class ParkingSystem {
                 break;
             case 2: // 我要停車
                 System.out.println("請選則車位(0~5): ");
-                int n = sc.nextInt();
-                int car = (int)Math.pow(2, n);
+                n = sc.nextInt();
+                car = (int)Math.pow(2, n);
                 if((parking & car) == 0) {
                     System.out.printf("停車成功 ! %d 號車位可停車\n", n);
                     parking += car;
                 } else {
                     System.out.printf("停車失敗 ! %d 號車位不可停車\n", n);
                 }
-                
                 break;
             case 3: // 我要取車
                 break;
