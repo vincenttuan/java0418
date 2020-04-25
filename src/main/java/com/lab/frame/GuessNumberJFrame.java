@@ -117,6 +117,7 @@ public class GuessNumberJFrame extends javax.swing.JFrame {
                 logOutput.setText(log + logOutput.getText());
                 startButton.setEnabled(true);
             }
+            guessInput.selectAll();
         }
     }//GEN-LAST:event_guessInputKeyPressed
 
