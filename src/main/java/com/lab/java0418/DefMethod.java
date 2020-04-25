@@ -4,6 +4,8 @@ public class DefMethod {
     // 主方法
     public static void main(String[] args) {
         sub1(30, 20);
+        int sum = sub2(30, 20, 10);
+        System.out.println("main 自行印出 sum= " + sum);
     }
     // 子方法 1, 可帶入2個參數
     public static void sub1(int x, int y) {
