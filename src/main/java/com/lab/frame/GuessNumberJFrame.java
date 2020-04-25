@@ -101,7 +101,22 @@ public class GuessNumberJFrame extends javax.swing.JFrame {
     private void guessInputKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_guessInputKeyPressed
         //System.out.println(evt.getKeyCode());
         if(evt.getKeyCode() == 10) { // 使用者按下 enter 鍵
-            
+            int guess = Integer.parseInt(guessInput.getText()); // 字串轉整數
+            String log = String.format("您猜的數字是 : %d\n", guess);
+            logOutput.setText(log + logOutput.getText());
+            if(guess > ans) {
+                max = guess;
+                log = String.format("%d ~ %d 猜一數字\n", min, max);
+                logOutput.setText(log + logOutput.getText());
+            } else if(guess < ans) {
+                min = guess;
+                log = String.format("%d ~ %d 猜一數字\n", min, max);
+                logOutput.setText(log + logOutput.getText());
+            } else {
+                log = "答對了";
+                logOutput.setText(log + logOutput.getText());
+                startButton.setEnabled(true);
+            }
         }
     }//GEN-LAST:event_guessInputKeyPressed
 
