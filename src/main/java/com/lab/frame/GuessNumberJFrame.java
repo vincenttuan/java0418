@@ -5,12 +5,14 @@
  */
 package com.lab.frame;
 
+import java.util.Random;
+
 /**
  *
  * @author MB-teacher
  */
 public class GuessNumberJFrame extends javax.swing.JFrame {
-
+    int ans, min, max; // 答案, 最小值, 最大值
     /**
      * Creates new form GuessNumberJFrame
      */
@@ -27,24 +29,35 @@ public class GuessNumberJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        guessInput = new javax.swing.JTextField();
+        startButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        logOutput = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("猜數字遊戲");
 
-        jTextField1.setFont(new java.awt.Font("新細明體", 0, 36)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("0");
+        guessInput.setFont(new java.awt.Font("新細明體", 0, 36)); // NOI18N
+        guessInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        guessInput.setText("0");
+        guessInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                guessInputKeyPressed(evt);
+            }
+        });
 
-        jButton1.setFont(new java.awt.Font("新細明體", 0, 36)); // NOI18N
-        jButton1.setText("開局");
+        startButton.setFont(new java.awt.Font("新細明體", 0, 36)); // NOI18N
+        startButton.setText("開局");
+        startButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startButtonActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        logOutput.setEditable(false);
+        logOutput.setColumns(20);
+        logOutput.setRows(5);
+        jScrollPane1.setViewportView(logOutput);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,9 +68,9 @@ public class GuessNumberJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(guessInput, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)
+                        .addComponent(startButton)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -66,8 +79,8 @@ public class GuessNumberJFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(startButton)
+                    .addComponent(guessInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
                 .addContainerGap())
@@ -75,6 +88,22 @@ public class GuessNumberJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
+        ans = new Random().nextInt(99) + 1;
+        min = 0;
+        max = 100;
+        startButton.setEnabled(false);
+        String log = String.format("%d ~ %d 猜一數字\n", min, max);
+        logOutput.setText(log);
+    }//GEN-LAST:event_startButtonActionPerformed
+
+    private void guessInputKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_guessInputKeyPressed
+        //System.out.println(evt.getKeyCode());
+        if(evt.getKeyCode() == 10) { // 使用者按下 enter 鍵
+            
+        }
+    }//GEN-LAST:event_guessInputKeyPressed
 
     /**
      * @param args the command line arguments
@@ -112,9 +141,9 @@ public class GuessNumberJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField guessInput;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextArea logOutput;
+    private javax.swing.JButton startButton;
     // End of variables declaration//GEN-END:variables
 }
